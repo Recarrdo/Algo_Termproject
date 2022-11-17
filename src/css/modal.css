@@ -1,0 +1,65 @@
+.Registeration {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.open_registeration {
+  position: absolute;
+  display: grid;
+  grid-template-rows: 1fr 6fr 1fr;
+  top: 25%;
+  right: 35%;
+  width: 30%;
+  height: 35%;
+  z-index: 500;
+  background-color: rgb(135, 207, 235);
+  animation: toggle-bg-show 0.3s;
+  border-radius: 1rem;
+}
+
+@keyframes toggle-bg-show {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.open_registeration header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid white;
+  padding: 1rem 1rem 1rem 1.5rem;
+}
+
+.open_registeration header span {
+  font-size: 1.25rem;
+  
+}
+
+.open_registeration section {
+  padding: 0.7rem 1rem 1rem 5rem;
+}
+
+.open_registeration footer {
+  margin-top: 1rem;
+  border-top: 1px solid white;
+  color: white;
+  font-weight: 800;
+}
+
+.open_registeration footer span {
+  float: right;
+  margin: 0.6rem 1.4rem 1.5rem 1.3rem;
+  border: 1px solid white;
+  padding: 0.3rem;
+  border-radius: 0.3rem;
+}
