@@ -625,10 +625,19 @@ body{
 
 /* 지도 이미지 시작 */
 
-#maincontents
+#arraylist
 {
   position:absolute;
+  width:25vw;
+  margin-left:2.5vw;
+  margin-right:2.5vw;
+  margin-top:5vh;
+  padding-top:3vh;
+  height:85vh;
+  font-weight: 500;
   display:none;
+ 
+  background-color:rgba(104, 104, 104, 0.293);
 }
 
 .Map
