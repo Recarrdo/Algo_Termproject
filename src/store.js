@@ -52,6 +52,10 @@ const useStore = create(set => ({
 
         set({dataArr : temp})
     },
+
+    clearDataArr : () =>{
+        set({dataArr : []});
+    },
     
 }))
 

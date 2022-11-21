@@ -3,6 +3,7 @@ import useStore from '../store';
 import '../App.css';
 import React, { useState, useRef, useEffect, isStart } from 'react';
 import Registeration from './modal';
+const { dataArr, setDataArr } = useStore();
 
 
 function PointData(x, y, firstW, secondW){
@@ -75,6 +76,7 @@ export default function MapCanvas ({width, height}){
       console.log(pointArr);
     }
   };
+
   const handleMouseMove = e => {
     if (ctx) {
       var rect = canvas.current.getBoundingClientRect();
