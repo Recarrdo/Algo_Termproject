@@ -148,6 +148,8 @@ function App() {
       const contentSidebar2 = document.getElementsByClassName('button');
       contentSidebar2[0].style.paddingBottom = '50px';
       contentSidebar2[1].style.paddingBottom = '50px';
+      const arraylist = document.getElementById('arraylist');
+      arraylist.style.display='none';
     }
 
 
@@ -187,6 +189,9 @@ function App() {
       const contentSidebar2 = document.getElementsByClassName('button');
       contentSidebar2[0].style.paddingBottom = '10px';
       contentSidebar2[1].style.paddingBottom = '10px';
+
+      const arraylist = document.getElementById('arraylist');
+      arraylist.style.display='block';
     }
 
     const showMap1 = function () {
@@ -222,6 +227,9 @@ function App() {
       const contentSidebar2 = document.getElementsByClassName('button');
       contentSidebar2[0].style.paddingBottom = '10px';
       contentSidebar2[1].style.paddingBottom = '10px';
+
+      const arraylist = document.getElementById('arraylist');
+      arraylist.style.display='block';
     }
 
     const showMap2 = function () {
@@ -257,6 +265,9 @@ function App() {
       const contentSidebar2 = document.getElementsByClassName('button');
       contentSidebar2[0].style.paddingBottom = '10px';
       contentSidebar2[1].style.paddingBottom = '10px';
+
+      const arraylist = document.getElementById('arraylist');
+      arraylist.style.display='block';
     }
 
     const showMap3 = function () {
@@ -292,6 +303,9 @@ function App() {
       const contentSidebar2 = document.getElementsByClassName('button');
       contentSidebar2[0].style.paddingBottom = '10px';
       contentSidebar2[1].style.paddingBottom = '10px';
+
+      const arraylist = document.getElementById('arraylist');
+      arraylist.style.display='block';
     }
 
     const showMap4 = function () {
@@ -327,6 +341,9 @@ function App() {
       const contentSidebar2 = document.getElementsByClassName('button');
       contentSidebar2[0].style.paddingBottom = '10px';
       contentSidebar2[1].style.paddingBottom = '10px';
+
+      const arraylist = document.getElementById('arraylist');
+      arraylist.style.display='block';
     }
 
     const showMap5 = function () {
@@ -362,6 +379,9 @@ function App() {
       const contentSidebar2 = document.getElementsByClassName('button');
       contentSidebar2[0].style.paddingBottom = '10px';
       contentSidebar2[1].style.paddingBottom = '10px';
+
+      const arraylist = document.getElementById('arraylist');
+      arraylist.style.display='block';
     }
 
     const showMap6 = function () {
@@ -397,6 +417,9 @@ function App() {
       const contentSidebar2 = document.getElementsByClassName('button');
       contentSidebar2[0].style.paddingBottom = '10px';
       contentSidebar2[1].style.paddingBottom = '10px';
+
+      const arraylist = document.getElementById('arraylist');
+      arraylist.style.display='block';
     }
 
     const showMap7 = function () {
@@ -432,6 +455,9 @@ function App() {
       const contentSidebar2 = document.getElementsByClassName('button');
       contentSidebar2[0].style.paddingBottom = '10px';
       contentSidebar2[1].style.paddingBottom = '10px';
+
+      const arraylist = document.getElementById('arraylist');
+      arraylist.style.display='block';
     }
 
     const showMap8 = function () {
@@ -468,6 +494,9 @@ function App() {
       const contentSidebar2 = document.getElementsByClassName('button');
       contentSidebar2[0].style.paddingBottom = '10px';
       contentSidebar2[1].style.paddingBottom = '10px';
+
+      const arraylist = document.getElementById('arraylist');
+      arraylist.style.display='block';
     }
 
     const showSetting = function () {
@@ -518,7 +547,9 @@ function App() {
           <div class="button" onClick={showReference}>
             <a>REFERENCE</a> {/*reference 버튼*/}
           </div>
-          <div id="maininput"></div>
+          <div id="arraylist">
+            {/*array 값을 적어놓을 칸*/}
+          </div>
         </div>
 
 
