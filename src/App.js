@@ -644,8 +644,8 @@ function App() {
 
         
         <div id="reference">
-        <div id="button" onClick={showReference}>
-        <div id="menu_esc"><div id="escbutton"></div>MENUESC</div>
+        <div class="button" onClick={showReference}>
+        <div id="menu_esc"><div id="escbutton"></div>❌</div>
              참조내용
              </div>
           </div>

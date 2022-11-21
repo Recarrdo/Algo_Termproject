@@ -1,124 +1,4 @@
-/* .App {
-  text-align: center;
-  position: relative;
-} */
 
-/*
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 10s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
-
-
-/* #fh5co-aside {
-      width: 30%;
-      position: fixed;
-      height: 100%;
-      z-index: 555;
-      background-color: #0bbbe6;
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center center;
-     } */
-
-/*
-aside{
-  background-color: #0bbbe6;
-  width: 30%;
-  height: 100%;
-  z-index: 666; /*우선순위
-  position: fixed;
-  text-align:center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  box-sizing: border-box;
-}
-
-aside h1{
-  padding:10px;
-}
-*/
-
-/* aside {
-  background-color: #0bbbe6;
-  width: 30%;
-  height: 100%;
-  position: absolute;
-  z-index:900;
-  text-align:center;
-}
-
-article
-{
-  background-color:red;
-  width:70%;
-  height:100%;
-  position:absolute;
-  z-index:800;
-  text-align:center;
-  float:right;
-}
-
-.button
-{
-  width:100%;
-  height:10%;
-  position:fixed;
-  background-color:blue;
-  z-index:999;
-  text-align:center;
-} */
-
-/* @media screen and (max-width: 768px) {
-  #left {
-    width: 100%;
-    position: top;
-    height: 10%; }
-  /* #fh5co-logo {
-      화면 작아질때 로고 크기, 위치 조정 코드 적기
-       }  
-  #main
-  {
-    width: 100%;
-    position:flex;
-    height:100%;
-  }
-      }
-
-/* ::-webkit-scrollbar {
-   display: none;
- } */ 
 
 body { /*페이드아웃 효과*/
   animation: fadein 0.5s;
@@ -170,253 +50,6 @@ body { /*페이드아웃 효과*/
   }
 }
 
-
-
-/* 이전 완성본!! */
-
-/* a {
-  color: #0bbbe6;
-  -webkit-transition: 0.5s;
-  -o-transition: 0.5s;
-  transition: 0.5s;
-}
-  a:hover, a:active, a:focus {
-    color: #0bbbe6;
-    outline: none;
-    text-decoration: none; }
-
-#fh5co-logo {
-          padding-top: 5%;
-          padding-bottom: 10%; }
-#fh5co-logo a {
-            font-weight: 800;
-            letter-spacing: -3px;
-            color: #fff; 
-            text-decoration: none;
-          }
-#fh5co-logo a:hover, a:active, a:focus  {
-              font-weight: 800;
-              letter-spacing: -3px;
-              color: rgb(0, 0, 0); 
-}
-
-
-
-body {
-  width: 100vw;
-  height: 100vh;
-  overflow:hidden;
-}
-
-body{
-  margin: 0px;
-  font-size: 18px;
-  color: #FFF;
-}
-#box {
- 
-  position: relative;
-  height: 100%;
-  margin: auto;
-  background-color: #F90;
-
-}
-#left {
-  background: linear-gradient(#09C,rgb(108, 108, 255));
-  float: left;
-  height: 100%;
-  width: 30%;
-  position: flex;
-  text-align:center;
-}
-
-
-#main {
-  background-color: #3C0;
-  float: left;
-  height: 100%;
-  width: 70%;
-  position: flex;
-}
-
-
-
-
-
-
-#sidebar_button {
-  position: relative;
-  height: auto;
-  background: linear-gradient(#09C,rgb(1, 117, 156));
-  margin-top: 5%;
-  margin-bottom:5%;
-  margin-left:3%;
-  margin-right:3%;
-  border-radius: 12px;
-}
-#sidebar_button a
-{
-  color: #fff;
-  text-decoration: none;
-}
-#sidebar_button a:hover a:active, a:focus
-{
-  font-weight: 800;
-  letter-spacing: -3px;
-  color: rgb(0, 0, 0); 
-}
-
-
-
-#maincontents
-{
-  float:left;
-  margin:0;
-  width: 70%;
-  height: 150%;
-  background-color:white;
-  background-size:cover;
-  background-image: url('metro.png');
-}
-
-
-
-#서울 img
-{
-  width: 33.4%;
-  height:20%;
-
-  margin-right:-8%;
-  margin-bottom:-10%;
-  float:left;
-  box-sizing: border-box;
-  transition: all 0.3s linear;
-  
-}
-#서울:hover img{
-  transform: scale(1.3);
-}
-
-#강원도 img
-{
-  width: 33.4%;
-  margin-left:-5%;
-  margin-right:-8%;
-  margin-bottom:-10%;
-  float:left;
-  box-sizing: border-box;
-  transition: all 0.3s linear;
-}
-#강원도:hover img{
-  transform: scale(1.3);
-}
-
-#경상북도 img
-{
-  width: 33.4%;
-  margin-left:-5%;
-  margin-right:20%;
-  margin-bottom:-10%;
-  float:left;
-  box-sizing: border-box;
-  transition: all 0.3s linear;
-}
-#경상북도:hover img{
-  transform: scale(1.3);
-} */
-
-/*line 2*/
-/* #경상남도 img
-{
-  width: 33.4%;
-  
-  margin-right:-8%;
-  margin-bottom:-10%;
-  float:left;
-  box-sizing: border-box;
-  transition: all 0.3s linear;
-}
-#경상남도:hover img{
-  transform: scale(1.3);
-}
-
-#충청남도 img
-{
-  width: 33.4%;
-  margin-left:-5%;
-  margin-right:-8%;
-  margin-bottom:-10%;
-  float:left;
-  box-sizing: border-box;
-  transition: all 0.3s linear;
-}
-#충청남도:hover img{
-  transform: scale(1.3);
-}
-
-#충청북도 img
-{
-  width: 33.4%;
-  margin-left:-5%;
-  margin-right:20%;
-  margin-bottom:-10%;
-  float:left;
-  box-sizing: border-box;
-  transition: all 0.3s linear;
-}
-#충청북도:hover img{
-  transform: scale(1.3);
-} */
-
-/*line 3*/
-/* #전라남도 img
-{
-  width: 33.4%;
-  margin: left -3%;
-  margin-right:-8%;
-  margin-bottom:30%;
-  float:left;
-  box-sizing: border-box;
-  transition: all 0.3s linear;
-}
-#전라남도:hover img{
-  transform: scale(1.3);
-}
-
-#전라북도 img
-{
-  width: 33.4%;
-  margin-left:-2%;
-  margin-right:-8%;
-  margin-bottom:30%;
-  float:left;
-  box-sizing: border-box;
-  transition: all 0.3s linear;
-}
-#전라북도:hover img{
-  transform: scale(1.3);
-}
-
-#제주도 img
-{
-  width: 33.4%;
-  margin-left:-6%;
-  margin-right:-8%;
-  margin-bottom:30%;
-
-  float:left;
-  box-sizing: border-box;
-  transition: all 0.3s linear;
-  
-}
-#제주도:hover img{
-  transform: scale(1.3);
-}
-
-iframe{
-  border-color:darkblue;
-} */
-
 body{
   width: 100vw;
   height: 100vh;
@@ -430,7 +63,7 @@ body{
   width: 30vw;
   height:120vh;
   float: left;
-  background-color:rgba(135, 207, 235, 0.8);
+  background:linear-gradient(to left, rgba(135, 207, 235, 0.745) 35%, rgba(91, 197, 238, 0.756) ,rgba(135, 207, 235, 0.751) 65%);
   text-align:center;
   transition: 0.3s;
   position: relative;
@@ -566,7 +199,7 @@ body{
 {
   position:absolute; /* 앞으로 main칸에 무슨 내용 적을때 무조건 position: absolute; 적기! */
   width:50vw;
-  height:100vh;
+  height:120vh;
   background-color: #777777da;
   transition: 0.1s;
   text-align:center;
@@ -617,6 +250,8 @@ body{
   padding-bottom:10vh;
   display:absolute;
   text-align:right;
+  font-size:20px;
+  opacity:0.8;
 }
 
 
@@ -632,7 +267,7 @@ body{
   margin-right:2.5vw;
   margin-top:5vh;
   padding-top:3vh;
-  height:85vh;
+  height: 85vh;
   font-weight: 500;
   display:none;
  
@@ -641,6 +276,7 @@ body{
 
 .Map
 {
+  position: absolute;
   margin-left:25%;
   margin-top:5%;
   display:none;
