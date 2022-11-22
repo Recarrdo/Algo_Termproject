@@ -270,7 +270,7 @@ const Brush = ({width, height, imgSrc}) => {
 
   return <div width={width} height={height + 60}>
     <div width={width} height={height} onClick={SetOpenModal}><canvas ref={canvas} width={width} height={height} onClick={handleMouseClickArc} /></div>
-    <div class='button_send' onClick={() => {
+    <div class='button_send' width={width} height={60}onClick={() => {
       drawing();  
       checking();
       // clearDataArr();

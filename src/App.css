@@ -162,10 +162,10 @@ a:focus {
 
 .button_send {
   background-color: skyblue;
-  width: 10;
+  width: 1;
   height: 60;
-  margin-left: 350px;
-  margin-right: 100px;
+  margin-left: 300px;
+  margin-right: 300px;
   text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
