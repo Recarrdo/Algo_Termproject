@@ -281,8 +281,7 @@ const Brush = ({width, height, imgSrc}) => {
 function App() {
   {
     /* main 화면 보기 *//*추가 요소가 생기면 여기에도 추가시켜야함*/
-    const { openModal, SetOpenModal } = useStore();
-
+    const { openModal, SetOpenModal, dataArr } = useStore();
 
     const showMain = function () {
       const content1 = document.getElementById('reference');
@@ -681,7 +680,9 @@ function App() {
     }
 
 
-
+    const showList = () => {
+      
+    }
 
 
 
@@ -709,7 +710,18 @@ function App() {
             <a>REFERENCE</a> {/*reference 버튼*/}
           </div>
           <div id="arraylist">
-            {/*array 값을 적어놓을 칸*/}
+            {
+              dataArr.map((val)=>{
+                console.log(val)
+                return(
+                <div className='show'>
+                  <span>X: {parseInt(val.x)}</span>
+                  <span>Y: {parseInt(val.y)}</span>
+                  <span>first-W: {val.firstW}</span>
+                  <span>second-W: {val.secondW}</span>
+                </div>);
+              })
+            }
           </div>
         </div>
 

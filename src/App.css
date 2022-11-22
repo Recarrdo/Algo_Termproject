@@ -1,109 +1,127 @@
-
-
-body { /*페이드아웃 효과*/
+body {
+  /*페이드아웃 효과*/
   animation: fadein 0.5s;
-  -moz-animation: fadein 0.5s; /* Firefox */
-  -webkit-animation: fadein 0.5s; /* Safari and Chrome */
-  -o-animation: fadein 0.5s; /* Opera */
+  -moz-animation: fadein 0.5s;
+  /* Firefox */
+  -webkit-animation: fadein 0.5s;
+  /* Safari and Chrome */
+  -o-animation: fadein 0.5s;
+  /* Opera */
 }
+
 @keyframes fadein {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
-@-moz-keyframes fadein { /* Firefox */
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+
+@-moz-keyframes fadein {
+
+  /* Firefox */
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
-@-webkit-keyframes fadein { /* Safari and Chrome */
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+
+@-webkit-keyframes fadein {
+
+  /* Safari and Chrome */
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
-@-o-keyframes fadein { /* Opera */
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+
+@-o-keyframes fadein {
+
+  /* Opera */
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes fadeInUp {
   0% {
-      opacity: 0;
-      transform: translate3d(0, 100%, 0);
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
   }
+
   to {
-      opacity: 1;
-      transform: translateZ(0);
+    opacity: 1;
+    transform: translateZ(0);
   }
 }
 
-body{
+body {
   width: 100vw;
   height: 100vh;
   background-image: url('metro.png');
-  background-size:cover;
-  
+  background-size: cover;
+
 }
 
-#sidebar
-{
+#sidebar {
   width: 30vw;
-  height:120vh;
+  height: 120vh;
   float: left;
-  background:linear-gradient(to left, rgba(135, 207, 235, 0.745) 35%, rgba(91, 197, 238, 0.756) ,rgba(135, 207, 235, 0.751) 65%);
-  text-align:center;
+  background: linear-gradient(to left, rgba(135, 207, 235, 0.745) 35%, rgba(91, 197, 238, 0.756), rgba(135, 207, 235, 0.751) 65%);
+  text-align: center;
   transition: 0.3s;
   position: relative;
 }
 
-#main
-{
-  width:70vw;
-  height:120vh;
+#main {
+  width: 70vw;
+  height: 120vh;
   float: left;
-  background-color:rgba(0, 191, 255, 0); /*투명*/
-  
+  background-color: rgba(0, 191, 255, 0);
+  /*투명*/
+
 
   transition: 0.3s;
   position: relative;
 
-  overflow-y:scroll;
+  overflow-y: scroll;
 
-  -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 
-  
+
 }
 
 
 ::-webkit-scrollbar {
-   display: none; /*Chrome and etc*/
- }
+  display: none;
+  /*Chrome and etc*/
+}
 
-#logo
-{
-  margin-bottom:20vh;
-  padding-top:5vh;
-  padding-left:5%;
-  padding-right:5%;
-  width:90%;
+#logo {
+  margin-bottom: 20vh;
+  padding-top: 5vh;
+  padding-left: 5%;
+  padding-right: 5%;
+  width: 90%;
   transition: 0.5s;
 }
-#logo a
-{
+
+#logo a {
 
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
@@ -111,16 +129,18 @@ body{
 
   font-weight: 800;
   letter-spacing: -2px;
-  color: #fff; 
+  color: #fff;
   text-decoration: none;
   font-size: 20px;
 }
 
-#logo a:hover, a:active, a:focus  {
+#logo a:hover,
+a:active,
+a:focus {
   font-weight: 800;
   letter-spacing: -2px;
   font-size: 20px;
-  color: rgb(0, 0, 0); 
+  color: rgb(0, 0, 0);
 }
 
 
@@ -154,118 +174,118 @@ body{
   transition: 0.5s;
 }
 
-.button
-{
-  padding-bottom:50px;
+.button {
+  padding-bottom: 50px;
   transition: 0.5s;
 }
-.button a
-{
+
+.button a {
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
-  
+
   font-weight: 800;
 
-  color: #fff; 
+  color: #fff;
   text-decoration: none;
   font-size: 20px;
 
- 
+
 }
-.button a:hover, a:active, a:focus  {
+
+.button a:hover,
+a:active,
+a:focus {
   font-weight: 800;
   letter-spacing: -3px;
-  color: rgb(0, 0, 0);  
+  color: rgb(0, 0, 0);
 }
 
-#maininput
-{
-  background-color:rgba(250, 235, 215, 0.43);
-  width:95%;
-  margin-left:2.5%;
-  margin-right:2.5%;
+#maininput {
+  background-color: rgba(250, 235, 215, 0.43);
+  width: 95%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
 
 }
 
-@media (max-width: 600px){ /*만약 화면이 작아졌을 때 사이드바 삭제*/
-  #sidebar
-  {
-    display:none;
-  }
-  
-  #main
-  {
-    width:100vw;
+@media (max-width: 600px) {
+
+  /*만약 화면이 작아졌을 때 사이드바 삭제*/
+  #sidebar {
+    display: none;
   }
 
-  #main .image  
-  {
+  #main {
+    width: 100vw;
+  }
+
+  #main .image {
     width: 29vw;
-    height:auto;
+    height: auto;
   }
 }
 
 
 /* 메인프레임에 있는 내용 */
 
-#reference
-{
-  position:absolute; /* 앞으로 main칸에 무슨 내용 적을때 무조건 position: absolute; 적기! */
-  width:50vw;
-  height:120vh;
+#reference {
+  position: absolute;
+  /* 앞으로 main칸에 무슨 내용 적을때 무조건 position: absolute; 적기! */
+  width: 50vw;
+  height: 120vh;
   background-color: #777777da;
   transition: 0.1s;
-  text-align:center;
+  text-align: center;
 
-  margin-left:5%;
-  margin-right:5%;
+  margin-left: 5%;
+  margin-right: 5%;
 
-  display:none;
+  display: none;
 }
 
-#intro
-{
-  position:absolute;
-  
+#intro {
+  position: absolute;
+
 }
-#line
-{
- 
-  display:block;
+
+#line {
+
+  display: block;
 }
-.image
-{
-  margin-top:2vh;
-  margin-left:2vw;
-  display:inline-block;
+
+.image {
+  margin-top: 2vh;
+  margin-left: 2vw;
+  display: inline-block;
   width: 21vw;
-  height:auto;
+  height: auto;
   transition: 0.5s;
   animation: fadeInUp 1s;
-  
+
 }
-.image > img
-{
-  
-  width:100%;
-  height:auto;
+
+.image>img {
+
+  width: 100%;
+  height: auto;
   transition: 0.5s;
 }
-.image:hover img{
+
+.image:hover img {
   transform: scale(1.3);
 }
+
 /*메뉴 클릭시 나오는 정보에 필요한 구성요소 시작*/
 
-#menu_esc 
-{
-  padding-top:20px;
-  padding-right:20px;
-  padding-bottom:10vh;
-  display:absolute;
-  text-align:right;
-  font-size:20px;
-  opacity:0.8;
+#menu_esc {
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-bottom: 10vh;
+  display: absolute;
+  text-align: right;
+  font-size: 20px;
+  opacity: 0.8;
 }
 
 
@@ -273,31 +293,28 @@ body{
 /*메뉴 클릭시 나오는 정보에 필요한 구성요소 끝*/
 /* 지도 이미지 시작 */
 
-#arraylist
-{
-  position:absolute;
-  width:25vw;
-  margin-left:2.5vw;
-  margin-right:2.5vw;
-  margin-top:5vh;
-  padding-top:3vh;
+#arraylist {
+  position: absolute;
+  width: 25vw;
+  margin-left: 2.5vw;
+  margin-right: 2.5vw;
+  margin-top: 5vh;
+  padding-top: 3vh;
   height: 85vh;
   font-weight: 500;
-  display:none;
- 
-  background-color:rgba(104, 104, 104, 0.293);
+  display: none;
+
+  background-color: rgba(104, 104, 104, 0.293);
 }
 
-.Map
-{
+.Map {
   position: absolute;
-  margin-left:25%;
-  margin-top:5%;
-  display:none;
+  margin-left: 25%;
+  margin-top: 5%;
+  display: none;
 }
 
-.Map .Registeration
-{
+.Map .Registeration {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -308,8 +325,17 @@ body{
   bottom: 0;
 }
 
-.Map .open_registeration
-{
-  margin-left:25%;
-  margin-top:5%;
+.Map .open_registeration {
+  margin-left: 25%;
+  margin-top: 5%;
+}
+
+.show {
+  margin: 1rem 1rem;
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.2rem;
+  border-bottom: 1px solid skyblue;
+  padding: 0 0 1rem 0;
+  color: white;
 }
