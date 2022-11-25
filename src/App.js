@@ -127,6 +127,10 @@ const Brush = ({width, height, imgSrc}) => {
   var arrW = [];
   var radius = [];
   var count = 0;
+  var newX=[];
+  var newY=[];
+  var last_count=0;
+
   const drawing = () => {
     if (count == 0) {
       for (let i = 0; i < dataArr.length; i++) {
@@ -156,15 +160,16 @@ const Brush = ({width, height, imgSrc}) => {
           ctx.fillStyle = 'black';
           ctx.fill();
           ctx.closePath();
+          newX[last_count]=arrX[i];
+          newY[last_count]=arrY[i];
+          last_count++;
         }
       }
     }
     count++;
   }
   var c_count = 1;
-  var newX=[];
-  var newY=[];
-  var last_count=0;
+  
 
   const checking = () => {
     //시간복잡도 : n!
@@ -188,9 +193,7 @@ const Brush = ({width, height, imgSrc}) => {
             ctx.fillStyle = 'green';
             ctx.fill();
             ctx.closePath();
-            newX[last_count]=EX;
-            newY[last_count]=EY;
-            last_count=last_count+1;
+            
           } else if ((arrW[i] < 100 && arrW[i] > 20) && (arrW[j] < 100 && arrW[j] > 20)) {
             var dist = getDistance(i, j);
             var total = radius[i] + radius[j];
@@ -235,6 +238,10 @@ const Brush = ({width, height, imgSrc}) => {
                 X = disX;
                 Y = disY;
               }
+              newX[last_count]=X;
+              newY[last_count]=Y;  
+              last_count++;
+
               console.log(X, Y, i, j);
               ctx.beginPath();
               ctx.arc(X, Y, 6, 0, 2 * Math.PI);
@@ -243,9 +250,6 @@ const Brush = ({width, height, imgSrc}) => {
               ctx.fillStyle = 'green';
               ctx.fill();
               ctx.closePath();
-              newX[last_count]=X;
-              newY[last_count]=Y;  
-              last_count=last_count+1;
             }
           }
         }
@@ -269,9 +273,27 @@ const Brush = ({width, height, imgSrc}) => {
   }
   const last_stage  = () => {
     for(var i=0; i<last_count; i++){
-      console.log(last_count, i, newX[i], newY[i]);
+      var max=0;
+      var max_location;
+      for(var j=0; j<last_count; j++){
+          if(newY[j]>max){
+            max=newY[j];
+            max_location=j;
+          }
+          var temp=newX[i];
+      newX[i]=newX[max_location];
+      newX[max_location]=temp;
+
+      var temp1=newY[i];
+      newY[i]=newY[max_location];
+      newY[max_location]=temp1;
+      }
     }
 
+
+    for(var i=0; i<last_count; i++){
+      console.log(last_count, i, newX[i], newY[i]);
+    }
 
     for(var i=0; i<last_count-1; i++){
       var min=99999;
@@ -287,13 +309,13 @@ const Brush = ({width, height, imgSrc}) => {
       newX[i+1]=newX[min_location];
       newX[min_location]=temp;
 
-      temp=newY[i+1];
+      var temp1=newY[i+1];
       newY[i+1]=newY[min_location];
-      newY[min_location]=temp;
-    }
-    for(var i=0; i<last_count; i++){
+      newY[min_location]=temp1;
+
       console.log(i, newX[i], newY[i]);
     }
+
     ctx.strokeStyle = 'black';
     ctx.fillStyle = 'black';
     for(var i=1; i<last_count; i++){
@@ -734,12 +756,12 @@ function App() {
       const content1 = document.getElementById('reference');
   
    
-      if(content1.style.display !== 'none') {
-        content1.style.display = 'none';
+      if(content1.style.display !== 'block') {
+        content1.style.display='block';
       }
      
       else {
-        content1.style.display = 'block';
+        content1.style.display='none';
       }
     }
 
@@ -762,7 +784,7 @@ function App() {
             <a
               href="./index.html"
               rel="noopener noreferrer">
-              SUBWAY STATION PLACEMENT ALGORITHM
+              Fair Subway Station
             </a>
           </div>
           
@@ -817,7 +839,7 @@ function App() {
         <div id="maincontents">{/*받을파일*/}
           <div class="Map" id="Seoul">
             <div>
-            <Brush width={700} height={700} imgSrc={seoul}/>
+            <Brush width={700} height={600} imgSrc={seoul}/>
             </div>
 
           </div>
@@ -825,56 +847,56 @@ function App() {
           <div class="Map" id="Gwangwon">
             <div>
             {/* {openModal && <Registeration />} */}
-            <Brush width={700} height={700} imgSrc={강원도}/>
+            <Brush width={700} height={600} imgSrc={강원도}/>
             </div>
           </div>
 
           <div class="Map" id="Kyeongbuk">
             <div>
             {/* {openModal && <Registeration />} */}
-            <Brush width={700} height={700} imgSrc={경상북도}/>
+            <Brush width={700} height={600} imgSrc={경상북도}/>
             </div>
           </div>
 
           <div class="Map" id="Kyeongnam">
             {/* {openModal && <Registeration />} */}
             <div>
-            <Brush width={700} height={700} imgSrc={경상남도}/>
+            <Brush width={700} height={600} imgSrc={경상남도}/>
             </div>
           </div>
 
           <div class="Map" id="Chungnam">
             {/* {openModal && <Registeration />} */}
             <div>
-            <Brush width={700} height={700} imgSrc={충청남도}/>
+            <Brush width={700} height={600} imgSrc={충청남도}/>
             </div>
           </div>
 
           <div class="Map" id="Chungbuk">
             {/* {openModal && <Registeration />} */}
             <div>
-            <Brush width={700} height={700} imgSrc={충청북도}/>
+            <Brush width={700} height={600} imgSrc={충청북도}/>
             </div>
           </div>
 
           <div class="Map" d="Jeonnam">
             {/* {openModal && <Registeration />} */}
             <div>
-            <Brush width={700} height={700} imgSrc={전라남도}/>
+            <Brush width={700} height={600} imgSrc={전라남도}/>
             </div>
           </div>
 
           <div class="Map" id="Jeonbuk">
             {/* {openModal && <Registeration />} */}
             <div>
-            <Brush width={700} height={700} imgSrc={전라북도}/>
+            <Brush width={700} height={600} imgSrc={전라북도}/>
             </div>            
           </div>
 
           <div class="Map" id="Jeju">
             {/* {openModal && <Registeration />} */}
             <div>
-            <Brush width={700} height={700} imgSrc={제주도}/>
+            <Brush width={700} height={600} imgSrc={제주도}/>
             </div>            
           </div>
           </div>
@@ -885,12 +907,21 @@ function App() {
         <div id="menu_esc"><div id="escbutton">❌</div></div>
              </div>
              <div class="link">
-              <p>IMAGE</p><br/>
-              <a href='https://www.naver.com' target='_blank'>http://www.naver.com</a><br/>
               <p>CODE</p><br/>
-              <a href='https://www.naver.com' target='_blank'>http://www.naver.com</a><br/>
-              <p>IMAGE</p><br/>
-              <a href='https://www.naver.com' target='_blank'>http://www.naver.com</a><br/>
+              <a href='https://jforj.tistory.com/284' target='_blank'>https://jforj.tistory.com/284</a><br/>
+              <a href='https://g1etistory.tistory.com/6' target='_blank'>https://g1etistory.tistory.com/6</a><br/>
+              <a href='https://hong6v6.tistory.com/entry/%EC%9A%94%EC%86%8C%EC%9D%98-%EC%A2%8C%ED%91%9C%EA%B0%92-%EA%B5%AC%ED%95%98%EA%B8%B0' target='_blank'>https://hong6v6.tistory.com/entry/..</a><br/>
+              <a href='https://minoo.medium.com/%EB%B2%88%EC%97%AD-5%EA%B0%80%EC%A7%80-%EB%A6%AC%EC%95%A1%ED%8A%B8-%EC%95%A0%EB%8B%88%EB%A9%94%EC%9D%B4%EC%85%98-%EC%9E%A5-%EB%8B%A8%EC%A0%90-%EB%B9%84%EA%B5%90-react-animations-in-depth-884ff6e61b88' target='_blank'>https://minoo.medium.com/..</a><br/>
+              <a href='https://code-study.tistory.com/77' target='_blank'>https://code-study.tistory.com/77</a><br/>
+              <a href='https://curryyou.tistory.com/334' target='_blank'>https://curryyou.tistory.com/334</a><br/>
+              <a href='https://velog.io/@mokyoungg/JS-JS%EC%97%90%EC%84%9C-Canvas-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0%EB%A7%88%EC%9A%B0%EC%8A%A4%EB%A1%9C-%EA%B7%B8%EB%A6%AC%EA%B8%B0' target='_blank'>https://velog.io/@mokyoungg/JS-JS..</a><br/>
+              <p>ETC</p><br/>
+              <a href='https://ko.reactjs.org/tutorial/tutorial.html' target='_blank'>https://ko.reactjs.org/tutorial/tutorial.html</a><br/>
+              <a href='https://goodmemory.tistory.com/103' target='_blank'>https://goodmemory.tistory.com/103</a><br/>
+              <a href='https://violetboralee.medium.com/react%EB%A5%BC-%EB%B0%B0%EC%9A%B0%EA%B8%B0-%EC%A0%84%EC%97%90-%EC%95%8C%EC%95%84%EC%95%BC-%ED%95%A0-javascript%EA%B8%B0%EC%B4%88-e0665f8cbee0' target='_blank'>https://violetboralee.medium.com/react..</a><br/>
+              <a href='https://immigration9.github.io/react,javascript/2020/07/26/javascript-to-know-for-react.html' target='_blank'>https://immigration9.github.io/react,javascript/2020/07/26/javascript-to-know-for-react.html</a><br/>
+              <a href='https://developer.mozilla.org/ko/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes' target='_blank'>https://developer.mozilla.org/ko/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes</a><br/>
+              <a href='https://developer.mozilla.org/ko/docs/Web/API/Canvas_API/Tutorial/Basic_usage' target='_blank'>https://developer.mozilla.org/ko/docs/Web/API/Canvas_API/Tutorial/Basic_usage</a><br/>
             </div>
           </div>
         </div>
