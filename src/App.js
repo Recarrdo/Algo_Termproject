@@ -162,6 +162,10 @@ const Brush = ({width, height, imgSrc}) => {
     count++;
   }
   var c_count = 1;
+  var newX=[];
+  var newY=[];
+  var last_count=0;
+
   const checking = () => {
     //시간복잡도 : n!
     if (c_count == 1) {
@@ -184,6 +188,9 @@ const Brush = ({width, height, imgSrc}) => {
             ctx.fillStyle = 'green';
             ctx.fill();
             ctx.closePath();
+            newX[last_count]=EX;
+            newY[last_count]=EY;
+            last_count=last_count+1;
           } else if ((arrW[i] < 100 && arrW[i] > 20) && (arrW[j] < 100 && arrW[j] > 20)) {
             var dist = getDistance(i, j);
             var total = radius[i] + radius[j];
@@ -236,6 +243,9 @@ const Brush = ({width, height, imgSrc}) => {
               ctx.fillStyle = 'green';
               ctx.fill();
               ctx.closePath();
+              newX[last_count]=X;
+              newY[last_count]=Y;  
+              last_count=last_count+1;
             }
           }
         }
@@ -249,6 +259,49 @@ const Brush = ({width, height, imgSrc}) => {
 
     var dist = Math.sqrt(Math.abs(dis_x * dis_x) + Math.abs(dis_y * dis_y));
     return dist;
+  }
+  const get_new_Distance  = (dot1, dot2) => {
+    var dis_x = newX[dot1] - newX[dot2];
+    var dis_y = newY[dot1] - newY[dot2];
+
+    var dist = Math.sqrt(Math.abs(dis_x * dis_x) + Math.abs(dis_y * dis_y));
+    return dist;
+  }
+  const last_stage  = () => {
+    for(var i=0; i<last_count; i++){
+      console.log(last_count, i, newX[i], newY[i]);
+    }
+
+
+    for(var i=0; i<last_count-1; i++){
+      var min=99999;
+      var min_location;
+      for(var j=i+1; j<last_count; j++){
+        var distance=get_new_Distance(i, j);
+        if(distance<min){
+          min=distance;
+          min_location=j;
+        }
+      }
+      var temp=newX[i+1];
+      newX[i+1]=newX[min_location];
+      newX[min_location]=temp;
+
+      temp=newY[i+1];
+      newY[i+1]=newY[min_location];
+      newY[min_location]=temp;
+    }
+    for(var i=0; i<last_count; i++){
+      console.log(i, newX[i], newY[i]);
+    }
+    ctx.strokeStyle = 'black';
+    ctx.fillStyle = 'black';
+    for(var i=1; i<last_count; i++){
+      ctx.moveTo(newX[i-1], newY[i-1])
+      ctx.lineTo(newX[i], newY[i]);
+      ctx.stroke();
+    }
+
   }
 
 
@@ -273,7 +326,8 @@ const Brush = ({width, height, imgSrc}) => {
     <div class='button_send' width={width} height={60}onClick={() => {
       drawing();  
       checking();
-      // clearDataArr();
+      last_stage();
+      clearDataArr();
     }}> 보내기 </div>
   </div>
 };
