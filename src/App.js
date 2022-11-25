@@ -309,7 +309,8 @@ function App() {
       contentSidebar2[0].style.paddingBottom = '50px';
       contentSidebar2[1].style.paddingBottom = '50px';
       const arraylist = document.getElementById('arraylist');
-      arraylist.style.display='none';
+      arraylist.style.visibility='hidden';
+      arraylist.style.height='0vh';
     }
 
 
@@ -351,7 +352,8 @@ function App() {
       contentSidebar2[1].style.paddingBottom = '10px';
 
       const arraylist = document.getElementById('arraylist');
-      arraylist.style.display='block';
+      arraylist.style.visibility='visible';
+      arraylist.style.height='85vh';
     }
 
     const showMap1 = function () {
@@ -389,7 +391,8 @@ function App() {
       contentSidebar2[1].style.paddingBottom = '10px';
 
       const arraylist = document.getElementById('arraylist');
-      arraylist.style.display='block';
+      arraylist.style.visibility='visible';
+      arraylist.style.height='85vh';
     }
 
     const showMap2 = function () {
@@ -427,7 +430,8 @@ function App() {
       contentSidebar2[1].style.paddingBottom = '10px';
 
       const arraylist = document.getElementById('arraylist');
-      arraylist.style.display='block';
+      arraylist.style.visibility='visible';
+      arraylist.style.height='85vh';
     }
 
     const showMap3 = function () {
@@ -465,7 +469,8 @@ function App() {
       contentSidebar2[1].style.paddingBottom = '10px';
 
       const arraylist = document.getElementById('arraylist');
-      arraylist.style.display='block';
+      arraylist.style.visibility='visible';
+      arraylist.style.height='85vh';
     }
 
     const showMap4 = function () {
@@ -503,7 +508,8 @@ function App() {
       contentSidebar2[1].style.paddingBottom = '10px';
 
       const arraylist = document.getElementById('arraylist');
-      arraylist.style.display='block';
+      arraylist.style.visibility='visible';
+      arraylist.style.height='85vh';
     }
 
     const showMap5 = function () {
@@ -541,7 +547,8 @@ function App() {
       contentSidebar2[1].style.paddingBottom = '10px';
 
       const arraylist = document.getElementById('arraylist');
-      arraylist.style.display='block';
+      arraylist.style.visibility='visible';
+      arraylist.style.height='85vh';
     }
 
     const showMap6 = function () {
@@ -579,7 +586,8 @@ function App() {
       contentSidebar2[1].style.paddingBottom = '10px';
 
       const arraylist = document.getElementById('arraylist');
-      arraylist.style.display='block';
+      arraylist.style.visibility='visible';
+      arraylist.style.height='85vh';
     }
 
     const showMap7 = function () {
@@ -617,7 +625,8 @@ function App() {
       contentSidebar2[1].style.paddingBottom = '10px';
 
       const arraylist = document.getElementById('arraylist');
-      arraylist.style.display='block';
+      arraylist.style.visibility='visible';
+      arraylist.style.height='85vh';
     }
 
     const showMap8 = function () {
@@ -656,7 +665,8 @@ function App() {
       contentSidebar2[1].style.paddingBottom = '10px';
 
       const arraylist = document.getElementById('arraylist');
-      arraylist.style.display='block';
+      arraylist.style.visibility='visible';
+      arraylist.style.height='85vh';
     }
 
     const showSetting = function () {
@@ -818,9 +828,16 @@ function App() {
         
         <div id="reference">
         <div class="button" onClick={showReference}>
-        <div id="menu_esc"><div id="escbutton"></div>❌</div>
-             참조내용
+        <div id="menu_esc"><div id="escbutton">❌</div></div>
              </div>
+             <div class="link">
+              <p>IMAGE</p><br/>
+              <a href='https://www.naver.com' target='_blank'>http://www.naver.com</a><br/>
+              <p>CODE</p><br/>
+              <a href='https://www.naver.com' target='_blank'>http://www.naver.com</a><br/>
+              <p>IMAGE</p><br/>
+              <a href='https://www.naver.com' target='_blank'>http://www.naver.com</a><br/>
+            </div>
           </div>
         </div>
 
@@ -831,41 +848,3 @@ function App() {
 }
 
 export default App;
-
-{/* <div id="box">
-        <div id="left">
-          <h1 id="fh5co-logo">
-        <a
-          href="./index.html"
-          rel="noopener noreferrer"
-        >
-          SUBWAY STATION PLACEMENT ALGORITHM
-          </a>
-        </h1>
-        <div id="sidebar_button">
-          <a href="http://www.naver.com" target="temp">
-          MAIN
-          </a>
-        </div>
-        <div id="sidebar_button">
-          <a>
-          REFERENCE
-          </a>
-        </div>
-        <div id="sidebar_button">
-          <a>
-          ETC
-          </a>
-        </div>
-        <a>
-          <iframe name="입력창" height="500px">
-            </iframe>
-        </a>
-        </div>
-    
-        <div id="maincontents">
-        <MainContents/>
-         
-        </div>
-      </div>
-     */}
