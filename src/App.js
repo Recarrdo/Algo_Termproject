@@ -114,14 +114,12 @@ const Brush = ({width, height, imgSrc}) => {
   ///////////////////////////////////////////////////////////////////////////////////
   ///////////////////////////////////////////////////////////////////////////////////
 
-  // 1. canvas 엘리먼트 취득
+  // 1. get canvas element 
   //var canvas = document.getElementById('myCanvas');
-  // 2. 2d모드의 그리기 객체 취득
+  // 2. get 2d mode's draw element
   //var ctx = canvas.getContext("2d");
   //ctx.globalAlpha = 0.18;
-  // 3. path 그리기 시작 설정
-  // 여기서 좌표기준은 캔버스에 대한 위치값으로 설정되어 있다. 따라서
-  // 따라서 실제로 받은 위치값을 변형시킬 필요가 있다.
+  // 3. setting start draw path 
   var arrX = [];
   var arrY = [];
   var arrW = [];
@@ -172,12 +170,12 @@ const Brush = ({width, height, imgSrc}) => {
   
 
   const checking = () => {
-    //시간복잡도 : n!
+    //time complexity : n!
     if (c_count == 1) {
       for (let i = 0; i < arrW.length; i++) {
         for (let j = i + 1; j < arrW.length; j++) {
           if ((arrW[i] >= 100)) {
-            // 이미 달성함. 기준치 만족
+            //Already BaseLine achieved
             var EX;
             var EY;
             if ((arrW[i] >= 100)) {
@@ -200,11 +198,11 @@ const Brush = ({width, height, imgSrc}) => {
             if (total > dist) {
 
 
-              //원이 큰원 안에 작은원이 perfect하게 속해있으면 겹치는 부분이 존재하지 않는다. 따라서
-              //두 반지름의 합이 두 원의 중심의 길이보다 작은경우 두 원은 서로 겹쳐있다고 판단할 수 있다.
-              // 
-              //원이 서로 겹치는 경우:
-              //각 원의 중심에 대한 직선의 비율로 나눈다.
+              //If a small circle in a large circle belongs perfectly, there is no overlap
+              //If the sum of the two radii is less than the length of the center of the two circles, 
+              //  you can determine that the two circles overlap each other.
+              //If the circles overlap:
+              //  Divide by the ratio of a straight line to the center of each circle.
               var cal;
               if (radius[i] >= radius[j]) {
                 cal = radius[i] / radius[j];
@@ -334,14 +332,6 @@ const Brush = ({width, height, imgSrc}) => {
   const clearCanvas = () => {
     ctx.clearRect(0, 0, width, height);
   }
-
-  // const SendButton = () => {
-  //   return <div class='button_send' onClick={() => {
-  //     drawing();  
-  //     checking();
-  //     clearDataArr();
-  //   }}> 보내기 </div>
-  // }
 
   return <div width={width} height={height + 60}>
     <div width={width} height={height} onClick={SetOpenModal}><canvas ref={canvas} width={width} height={height} onClick={handleMouseClickArc} /></div>
